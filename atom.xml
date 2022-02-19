@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freewalker.xyz</id>
     <title>freedom</title>
-    <updated>2022-02-19T13:24:01.030Z</updated>
+    <updated>2022-02-19T15:17:27.290Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freewalker.xyz"/>
     <link rel="self" href="https://freewalker.xyz/atom.xml"/>
@@ -10,6 +10,49 @@
     <logo>https://freewalker.xyz/images/avatar.png</logo>
     <icon>https://freewalker.xyz/favicon.ico</icon>
     <rights>All rights reserved 2022, freedom</rights>
+    <entry>
+        <title type="html"><![CDATA[资源]]></title>
+        <id>https://freewalker.xyz/post/zi-yuan/</id>
+        <link href="https://freewalker.xyz/post/zi-yuan/">
+        </link>
+        <updated>2022-02-19T15:11:01.000Z</updated>
+        <content type="html"><![CDATA[<p>1、crazy games https://www.crazygames.com/<br>
+2、小霸王其乐无穷 https://www.yikm.net/<br>
+3、io games https://iogames.space/<br>
+4、poki游戏网 https://poki.cn/<br>
+5、armor games https://armorgames.com/<br>
+6、在线DOS游戏 https://dos.zczc.cz/<br>
+7、灵动游戏 http://www.mhhf.com/</p>
+<ol>
+<li>视频类预告片世界：https://www.yugaopian.cn/</li>
+<li>33台词：http://33.agilestudio.cn/<br>
+3.MixKit：https://mixkit.co/free-stock-video/<br>
+4.Pexel：https://www.pexels.com/zh-cn/video/<br>
+5.Videezy：https://www.videezy.com/<br>
+6.VJShi：https://www.vjshi.com/</li>
+</ol>
+<p>静态图片<br>
+1.PH：https://pxhere.com/<br>
+2.CC0图片网：https://cc0.cn/<br>
+3.Foodiesfeed：https://www.foodiesfeed.com/<br>
+4.Unplash：https://unsplash.com/<br>
+5.Pixabay：https://pixabay.com/</p>
+<p>动态图<br>
+1.Giphy：https://giphy.com/<br>
+2.GfyCat：https://gfycat.com/<br>
+3.Tenor：https://tenor.com/<br>
+4.GIF ABYSS：https://gifs.alphacoders.com/<br>
+5.动图宇宙：https://biaoqingsoso.com/<br>
+6.Soogif：https://www.soogif.com/</p>
+<p>壁纸<br>
+1.WallHaven：https://wallhaven.cc/<br>
+2.10Wallpaper：https://www.10wallpaper.com/<br>
+3.alphacoders：https://wall.alphacoders.com/?lang=Chinese<br>
+4.极简壁纸：https://bz.zzzmh.cn/index<br>
+5.3G壁纸：https://www.3gbizhi.com/<br>
+6.必应壁纸：https://bing.ioliu.cn/ .闪萌：http://www.weshineapp.com/</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[9320]]></title>
         <id>https://freewalker.xyz/post/9320/</id>
