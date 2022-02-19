@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Dskywalker1.github.io</id>
+    <title>Skywalker</title>
+    <updated>2022-02-19T07:32:23.860Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Dskywalker1.github.io"/>
+    <link rel="self" href="https://Dskywalker1.github.io/atom.xml"/>
+    <subtitle>温故而知新</subtitle>
+    <logo>https://Dskywalker1.github.io/images/avatar.png</logo>
+    <icon>https://Dskywalker1.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2022, Skywalker</rights>
+    <entry>
+        <title type="html"><![CDATA[Hello word！]]></title>
+        <id>https://Dskywalker1.github.io/post/1/</id>
+        <link href="https://Dskywalker1.github.io/post/1/">
+        </link>
+        <updated>2018-12-11T16:00:00.000Z</updated>
+        <content type="html"><![CDATA[<div style="position: relative; padding: 30% 45%;">
+    <iframe style="
+        position: absolute; 
+        width: 100%; 
+        height: 100%; 
+        left: 0; top: 0;" 
+        src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" 
+        scrolling="no" 
+        border="0" 
+        frameborder="no" 
+        framespacing="0" 
+        allowfullscreen="true">
+    </iframe>
+</div>]]></content>
+    </entry>
+</feed>
