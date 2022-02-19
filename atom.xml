@@ -1,30 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://Dskywalker1.github.io</id>
+    <id>https://freewalker.xyz</id>
     <title>freedom</title>
-    <updated>2022-02-19T08:42:35.676Z</updated>
+    <updated>2022-02-19T10:45:47.063Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://Dskywalker1.github.io"/>
-    <link rel="self" href="https://Dskywalker1.github.io/atom.xml"/>
+    <link rel="alternate" href="https://freewalker.xyz"/>
+    <link rel="self" href="https://freewalker.xyz/atom.xml"/>
     <subtitle>may the force be with you</subtitle>
-    <logo>https://Dskywalker1.github.io/images/avatar.png</logo>
-    <icon>https://Dskywalker1.github.io/favicon.ico</icon>
+    <logo>https://freewalker.xyz/images/avatar.png</logo>
+    <icon>https://freewalker.xyz/favicon.ico</icon>
     <rights>All rights reserved 2022, freedom</rights>
     <entry>
-        <title type="html"><![CDATA[hallo]]></title>
-        <id>https://Dskywalker1.github.io/post/hallo/</id>
-        <link href="https://Dskywalker1.github.io/post/hallo/">
-        </link>
-        <updated>2022-02-19T08:37:32.000Z</updated>
-        <content type="html"><![CDATA[<p>color 2<br>
-dir /s<br>
-磁盘检测命令</p>
-]]></content>
-    </entry>
-    <entry>
         <title type="html"><![CDATA[Hello word！]]></title>
-        <id>https://Dskywalker1.github.io/post/1/</id>
-        <link href="https://Dskywalker1.github.io/post/1/">
+        <id>https://freewalker.xyz/post/1/</id>
+        <link href="https://freewalker.xyz/post/1/">
         </link>
         <updated>2022-02-19T08:08:41.000Z</updated>
         <content type="html"><![CDATA[<div style="position: relative; padding: 30% 45%;">
