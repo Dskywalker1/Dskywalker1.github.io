@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freewalker.xyz</id>
     <title>Freedom.skywalker</title>
-    <updated>2022-02-20T06:15:12.510Z</updated>
+    <updated>2022-02-20T06:59:06.520Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freewalker.xyz"/>
     <link rel="self" href="https://freewalker.xyz/atom.xml"/>
@@ -152,7 +152,7 @@
         width: 100%; 
         height: 100%; 
         left: 0; top: 0;" 
-        src="//player.bilibili.com/player.html?aid=466379538&bvid=BV1o5411d7ze&cid=506167130&page=1" 
+        src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" 
         scrolling="no" 
         border="0" 
         frameborder="no" 
@@ -165,27 +165,6 @@
 <h1 id="线路4之西海岸">线路4之西海岸</h1>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/_CL6n0FJZpk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello word！]]></title>
-        <id>https://freewalker.xyz/post/1/</id>
-        <link href="https://freewalker.xyz/post/1/">
-        </link>
-        <updated>2022-02-19T08:08:41.000Z</updated>
-        <content type="html"><![CDATA[<div style="position: relative; padding: 30% 45%;">
-    <iframe style="
-        position: absolute; 
-        width: 100%; 
-        height: 100%; 
-        left: 0; top: 0;" 
-        src="//player.bilibili.com/player.html?aid=80433022&bvid=BV1GJ411x7h7&cid=137649199&page=1" 
-        scrolling="no" 
-        border="0" 
-        frameborder="no" 
-        framespacing="0" 
-        allowfullscreen="true">
-    </iframe>
-</div>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[关于]]></title>
