@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freewalker.xyz</id>
     <title>freedom</title>
-    <updated>2022-02-20T04:20:49.234Z</updated>
+    <updated>2022-02-20T04:25:03.489Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freewalker.xyz"/>
     <link rel="self" href="https://freewalker.xyz/atom.xml"/>
@@ -19,7 +19,8 @@
         <content type="html"><![CDATA[<p>doctor</p>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 <p>spider</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/EU0LjkAUQ6E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[MUSIC]]></title>
@@ -27,7 +28,10 @@
         <link href="https://freewalker.xyz/post/music/">
         </link>
         <updated>2022-02-20T04:14:27.000Z</updated>
-        <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+        <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>A DAY IN THE LIFE</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/usNsCeOV4GM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[CAR]]></title>
@@ -36,7 +40,9 @@
         </link>
         <updated>2022-02-20T04:13:59.000Z</updated>
         <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://freewalker.xyz/post-images/1645330462629.jpg" alt="" loading="lazy"></figure>
-]]></content>
+<p>DC</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/m_KBvP0_8Tc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/btViXvIDsi0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[GAMES]]></title>
