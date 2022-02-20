@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://freewalker.xyz</id>
     <title>freedom</title>
-    <updated>2022-02-20T04:10:01.587Z</updated>
+    <updated>2022-02-20T04:20:11.571Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://freewalker.xyz"/>
     <link rel="self" href="https://freewalker.xyz/atom.xml"/>
@@ -10,6 +10,52 @@
     <logo>https://freewalker.xyz/images/avatar.png</logo>
     <icon>https://freewalker.xyz/favicon.ico</icon>
     <rights>All rights reserved 2022, freedom</rights>
+    <entry>
+        <title type="html"><![CDATA[TV]]></title>
+        <id>https://freewalker.xyz/post/tv/</id>
+        <link href="https://freewalker.xyz/post/tv/">
+        </link>
+        <updated>2022-02-20T04:17:18.000Z</updated>
+        <content type="html"><![CDATA[<p>doctor</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aWzlQ2N6qqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<p>spider</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[MUSIC]]></title>
+        <id>https://freewalker.xyz/post/music/</id>
+        <link href="https://freewalker.xyz/post/music/">
+        </link>
+        <updated>2022-02-20T04:14:27.000Z</updated>
+        <content type="html"><![CDATA[<iframe width="560" height="315" src="https://www.youtube.com/embed/fJ9rUzIMcZQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[CAR]]></title>
+        <id>https://freewalker.xyz/post/car/</id>
+        <link href="https://freewalker.xyz/post/car/">
+        </link>
+        <updated>2022-02-20T04:13:59.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://freewalker.xyz/post-images/1645330462629.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[GAMES]]></title>
+        <id>https://freewalker.xyz/post/games/</id>
+        <link href="https://freewalker.xyz/post/games/">
+        </link>
+        <updated>2022-02-20T04:13:35.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://freewalker.xyz/post-images/1645330436081.PNG" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[FOOTBAL]]></title>
+        <id>https://freewalker.xyz/post/footbal/</id>
+        <link href="https://freewalker.xyz/post/footbal/">
+        </link>
+        <updated>2022-02-20T04:13:02.000Z</updated>
+        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://freewalker.xyz/post-images/1645330409469.jpg" alt="" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[RED BULL]]></title>
         <id>https://freewalker.xyz/post/red-bull/</id>
@@ -145,18 +191,5 @@
         allowfullscreen="true">
     </iframe>
 </div>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[关于]]></title>
-        <id>https://freewalker.xyz/post/about/</id>
-        <link href="https://freewalker.xyz/post/about/">
-        </link>
-        <updated>2019-01-25T11:09:48.000Z</updated>
-        <content type="html"><![CDATA[<figure data-type="image" tabindex="1"><img src="https://freewalker.xyz/post-images/1645274400776.jpg" alt="" loading="lazy"></figure>
-<p>欢迎来到我的小站呀，很高兴遇见你！</p>
-<p>关于本站  freedom</p>
-<p>博主是谁   天行者</p>
-<p>兴趣爱好  拯救世界 踢足球 开车 玩游戏 听音乐 看电视</p>
-]]></content>
     </entry>
 </feed>
