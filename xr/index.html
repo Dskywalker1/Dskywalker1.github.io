@@ -2,28 +2,180 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <meta name="description" content="上一次那件事已经过去了10年了。那时我只有7岁，还不知道爸爸去了哪里。
+自从爸爸消失以后，我便一个人独自在这垃圾站靠着捡垃圾生活了7年。这10年以来我在这摸爬滚打，受尽了苦难，曾经的家在爸爸消失后便被政府收走，妈妈也在7年前在地下城的天桥上..." />
+    <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/live2d.css">
     <link rel="stylesheet" href="https://www.freewalker.xyz/styles/main.css">
-    <script src="https://www.freewalker.xyz/media/js/valine.min.js"></script>
-    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-    <meta name="description" content="May the force be with you
-" />
-    <meta http-equiv="x-pjax-version" content="v123">
-    <title>Freedom.skywalker</title>
+    <!-- 代码渲染风格css -->
+    
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/styles/vs2015.min.css">
+    
+    <!-- 代码高亮插件 -->
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.18.1/build/highlight.min.js"></script>
+    <!-- 代码复制插件 -->
+    <script src="https://cdn.jsdelivr.net/gh/850552586/ericamcdn@0.1/js/clipboard.min.js"></script>
+    <!-- live2d插件 -->
+    <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/live2d.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+    <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+    <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.13.1/css/all.min.css" rel="stylesheet">
+    <!-- 数学公式 -->
+    
+    <title>渲染</title>
+
+    <!-- 大纲索引css调整 -->
+    
+    <style>
+        .markdownIt-TOC {
+            margin-left: 28%;
+            padding-left: 2px;
+            width: 80%;
+        }
+
+        .markdownIt-TOC li {
+            padding-left: 8%;
+        }
+    </style>
+    
 </head>
 
-
 <body>
+    <div id="landlord">
+        <div class="message" style="opacity:0"></div>
+        <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+    </div>
+    <div id="domainname" style="display:none">https://www.freewalker.xyz</div>
     <div id="content">
-        <div class="nav-large">
-            <div class="row">
-                <!-- ----------------左侧菜单栏html 👇-------------------------------------->
-                
-                <!--------------- pc端菜单栏👇 ---------------->
-                <div class="side"><head>
+        <div>
+            <!----------- 移动端导航栏👇 ----------------->
+            <div id="bar">
+                <style>
+  .navmobile {
+    z-index: 15;
+    max-height: 40vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+  }
+
+  @media screen and (max-width: 1200px) {
+    .navbar {
+      max-width: 100vw;
+    }
+  }
+
+  @media screen and (max-width:1200px) and (min-width: 768px) {
+    @media (min-width: 768px) {
+      .navbar-nav {
+        float: right;
+        margin: 0;
+      }
+    }
+  }
+
+  @media screen and (max-width:768px) {
+    .mbapspan {
+      padding: 0;
+    }
+  }
+</style>
+<div class="pjaxloading"  onclick="pjaxloadingClose()">
+  <div class="loadingbackground"></div>
+  <div id="loading">
+    <div class="loading">
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
+  <div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
+        aria-expanded="false" id="barbutton">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a data-pjax class="navbar-brand" style="color:white" href="https://www.freewalker.xyz">Freedom.skywalker&nbsp;&nbsp;|</a>
+      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
+          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="barmenu">
+      <ul class="nav navbar-nav">
+        
+        
+        <li>
+          <a data-pjax href="/" style="color:white">
+            首页
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/archives" style="color:white">
+            目录
+          </a>
+        </li>
+        
+        
+        
+        <li>
+          <a data-pjax href="/about" style="color:white">
+            关于
+          </a>
+        </li>
+        
+        
+        
+        
+          
+        <li><a data-pjax href="https://www.freewalker.xyz/friends" style="color:white">友链</a></li>
+
+        
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+  <script>
+    let btstate = false;
+    var bt = $("#barbutton");
+    var bm = $("#barmenu");
+    bt.click(function () {
+      dropdown();
+    })
+    function dropdown() {
+      console.log(btstate);
+      //下拉
+      if (btstate == false) {
+        bt.removeClass("collapsed");
+        bt.attr("aria-expanded", "true");
+        bm.attr("aria-expanded", "true")
+        bm.fadeIn(700);
+        btstate = true;
+      }
+      else {
+        bt.addClass("collapsed");
+        bt.attr("aria-expanded", "false");
+        bm.removeClass("in");
+        bm.hide();
+        bm.attr("aria-expanded", "false");
+        btstate = false;
+      }
+    }
+  </script> 
+            </div>
+            <!----------- 移动端导航栏👆 ----------------->
+
+            <!--------------- pc端菜单栏👇 ---------------->
+            <div class="side"><head>
     <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.freewalker.xyz/styles/main.css">
     
@@ -984,7 +1136,11 @@ menulist.eq(i).show();
     }
 </script>
 <!----夜间模式👆--></div>
-                <!--------------- pc端菜单栏👆 ---------------->
+            <!--------------- pc端菜单栏👆 ---------------->
+
+            <!-- ----------------左侧菜单栏html 👇-------------------------------------->
+            
+            <div>
                 <div id="tab1" class="tab">
                     <div class="bars">
                         <span></span>
@@ -994,223 +1150,136 @@ menulist.eq(i).show();
                     <div class="close"></div>
                 </div>
                 <div class="col-md-1 col-lg-3"></div>
-                <!----------- 移动端导航栏👇 ----------------->
-                <div class="mobilebar"><style>
-  .navmobile {
-    z-index: 15;
-    max-height: 40vh;
-    overflow-y: scroll;
-    overflow-x: hidden;
-  }
+                <!-- main标签，pjax渲染时加载以下内容👇 -->
+                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7" style="padding:0;">
+                    <div class="readingmode" onclick="readingmode()">阅</div>
+                    <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/font-awesome.css">
 
-  @media screen and (max-width: 1200px) {
-    .navbar {
-      max-width: 100vw;
-    }
-  }
+<body>
+    <div class="allcontent" id="postdetail">
+        <div class="postshow postpadding" style="padding-bottom: 0;">
+            
+            <div class="postdetailimg">
+                
+                <img src="https://api.zylearning.top/api/wallpaper?lx=qc" class="postimage">
+                
+            </div>
+            <div class="postinfo-detail">
+                <div class="postdate"><i class="fa fa-calendar"></i>2018-12-12</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 6 min read</div>
+            <div class="posttag">
+                
+            </div>
+        </div>
+        
+        <div id="articlecontent">
+            <div id="texttitle" style="text-align: center">
+                <h2 id="ptitle">渲染</h2>
+                <!-- id 将作为查询条件 -->
+                <div id="pl" style="display:none">https://www.freewalker.xyz/xr/</div>
+                <div id="rootaddr" style="display:none">https://www.freewalker.xyz</div>
+                
+                    
+                    <span id="hotnum">
+                        <h4><i class="fa fa-eye" aria-hidden="true" style="color: #FF8C00;"></i>&nbsp;&nbsp;热度</i>: <i
+                                class="hotnum">loading...</i></h4>
+                    </span>
+                    
+                
+            </div>
+            <div class="text ">
+                <p>上一次那件事已经过去了10年了。那时我只有7岁，还不知道爸爸去了哪里。</p>
+<p>自从爸爸消失以后，我便一个人独自在这垃圾站靠着捡垃圾生活了7年。这10年以来我在这摸爬滚打，受尽了苦难，曾经的家在爸爸消失后便被政府收走，妈妈也在7年前在地下城的天桥上被小混混杀害。我一个人离开了洛圣都来到了圣安地列斯郊外的垃圾站。这里就是我住的地方，我把她叫做“cyber pit”。“今天又有什么好东西吗？天行者。”说话的这个是我的机器人B-7，他是我在垃圾站用废弃的零件组装的。别看她圆头圆脑的，她可聪明了。我回答她说：“哦！和往常一样，捡了一点吃，还有一个奇怪的剑柄，好像以前在哪里见过。”我走进cyber pit，里头有个收音机永远放着20世纪中叶以后的摇滚乐，每天最有趣的就是10点的THE BEATLES电台，我定会准时躺在床上收听！墙上贴满了足球运动员和赛车的海报。还有一百年前就沉入海底的岛国所做的漫画被叠在桌子上，我已经3年没打开过了，上面沾满了灰尘。我看了看时间才21点，于是我打开play station 7玩起了《绿洲》。“又死了，唉......”我摘下VR设备，躺在了床上，这时收音机传来了披头士的yesterday，我伴着歌声入睡了......</p>
+<p>“快醒醒......XW·天行者！......快醒醒！”迷糊之中我睁开了眼睛，一束很强的光照在了我的脸上。我艰难地睁开眼睛，看到了一群全副武装的人在我的家门口。我急忙地拿起那个剑柄，拉上B-7从后面出去，跳上了我在垃圾站用HONDA CIVIC TYPE-R所修理并改装的一台车。我踩离合挂上一档，一脚油门到底。车像离弦的箭飞了出去。三档，四档......我只顾加速，这时，一门炮炸在我的车后，我回头一看，他们开的是飞机F-88。我开进圣安地列斯城里，他们穷追不舍。这时我看到一个地下停车场，我想都没想就踩离合，降档，切弯反打，刹车，跟趾给油，出弯摆正。一个接近完美的惯性漂移把我送进了地下停车场，我想他们的飞机应该不追了吧。我敲开了一辆Ferrari SF90，往出口开去。当我开到出口时，数不清的飞机大炮对着我。我无奈下车投降，他们把我所有的东西都收走了。我被打晕了过去，醒来之后我被带到了一个好像沙漠中军事基地的地方。</p>
+<p>“XW·天行者 17岁。10年前爸爸失踪，7年前妈妈在地下城被杀，之后便一直独自生活在圣安地列斯旁的垃圾站，没说错吧！”我环顾四周，这里像是大会堂一样，我在圆桌的中央，圆桌的人都在看着我。我点了点头。那个声音又说了下去“其实你的爸爸不是失踪了，10年前，他被派遣到太空中执行任务，后来遭到了不明外星生物的袭击，他为了保护地球，于外星人战斗，最后......他......英勇的牺牲了......我们不会忘记他的——宏宇·天行者！”空气突然变得安静起来，我无法相信他们所说的一切，但是我却不知道如何开口。这时，一个声音打破了僵局“他真的能胜任这个任务吗？”我不解的说道：“什么任务？”“这次我们找到你，其实是因为我们的空间站遭到了不明入侵者的袭击。你的父亲在上一次任务中似乎用到了某种神秘的力量，你是他的后人，所以你应该知道什么。”那个声音又出现了。“可是我对这些一无所知啊！”我带着一丝恐惧回答道。没等我说再多，我便被打晕抓走了。</p>
+<p>当我再一次醒来，我已经在飞船上了，而且飞船已经开始和永恒空间站对接了。我望向窗外，那一幕我这辈子都不会忘记......地球像一团烟，一点陆地和水都看不见，时不时有飞船窜过那不知道有多厚的烟雾，地球周围的轨道上全是太空垃圾，惨不忍睹。我看向我们的飞船，上面印着SPACE X的字样。SPACE X现在已垄断航空市场,地球轨道上几乎都是space x所发射的星链和卫星。我看着这场景，大受震撼！”“XW·Skywalker！快来，准备好战斗吧！”一位士兵把我的目光从窗外移到了飞船上。我不知所措，我把剑柄配在腰上，拿起了机枪。飞船与永恒号之间的门打开了，我跟在队伍的后面。这时，一个脑袋开瓢，牙齿比我枪还长的生物出现在我们眼前，他大肆吃着我们人类，他的口水滴下来，把甲板和士兵们都腐蚀了。我双腿软了，像泡沫一样。我跪倒在了地上，那只怪物不到一会，便杀了所有人。我鼓起勇气往回跑，他追了上来。我连滚带爬的来到了控制舱，向地球呼救。那边传来了令我绝望的回复：“你们这艘飞船上的都是罪人，你们该死。虽然你的父亲很伟大，但是他的力量威胁到了我们。你身为他的后代，一定也不会好对付。去死吧！”我很绝望，难道我只有死路一条了吗？......不！我一定可以用那股力量杀了他。这时，我腰间的剑柄似乎在抖动，我拿起她。嗡的一声，一道蓝色的剑柄出现了。我眼神坚毅的看着后面的怪物，手握光剑冲了上去，他张开嘴巴向我咬来，我往下一蹲，用光剑往上一切，他被我切出了一道大伤口。我见势站起来，往他头处一砍。他脑袋与身体分离，我害怕的看着眼前，他似乎已经没命了。</p>
+<p>我坐上时间号飞船的控制室，望着地球，我陷入了沉思。我该回地球还是去哪里呢？地球已经容不下我了，我还是走吧！我把时间号的船头对向无尽的宇宙，出发！</p>
 
-  @media screen and (max-width:1200px) and (min-width: 768px) {
-    @media (min-width: 768px) {
-      .navbar-nav {
-        float: right;
-        margin: 0;
-      }
-    }
-  }
-
-  @media screen and (max-width:768px) {
-    .mbapspan {
-      padding: 0;
-    }
-  }
-</style>
-<div class="pjaxloading"  onclick="pjaxloadingClose()">
-  <div class="loadingbackground"></div>
-  <div id="loading">
-    <div class="loading">
-    </div>
-  </div>
-</div>
-<nav class="navbar navbar-inverse navbar-fixed-top navmobile">
-  <div class="container-fluid">
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#barmenu"
-        aria-expanded="false" id="barbutton">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a data-pjax class="navbar-brand" style="color:white" href="https://www.freewalker.xyz">Freedom.skywalker&nbsp;&nbsp;|</a>
-      <span class="navbar-brand mbapspan"><i id="mbaplayer" class="fa fa-play-circle-o" aria-hidden="true"
-          style="font-size: 28px;top: 12px;position: absolute;" onclick="aplayerPlay();"></i></span>
-    </div>
-
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="barmenu">
-      <ul class="nav navbar-nav">
+            </div>
+            <hr style="width: 80%;">
+            
+            <div class="donateContainer">
+                <span class="donatebtn">赏</span>
+            </div>
+            <div class="donateContainer">
+                <img src="" alt="" class="donate">
+            </div>
+            
+            <div class="postfooter">
+                <ul class="post-copyright">
+                    <li><strong>文章作者：</strong>自由</li>
+            <li><strong>原文链接：</strong>https://www.freewalker.xyz/xr/</li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
+                许可协议。转载请注明出处！</li>
+            </ul>
+        </div>
         
-        
-        <li>
-          <a data-pjax href="/" style="color:white">
-            首页
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/archives" style="color:white">
-            目录
-          </a>
-        </li>
-        
-        
-        
-        <li>
-          <a data-pjax href="/about" style="color:white">
-            关于
-          </a>
-        </li>
-        
-        
-        
-        
-          
-        <li><a data-pjax href="https://www.freewalker.xyz/friends" style="color:white">友链</a></li>
-
-        
-        </ul>
-      </div><!-- /.navbar-collapse -->
-    </div><!-- /.container-fluid -->
-  </nav>
-
-
-  <!-- 引入jQuery核心js文件 -->
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
-  <script>
-    let btstate = false;
-    var bt = $("#barbutton");
-    var bm = $("#barmenu");
-    bt.click(function () {
-      dropdown();
-    })
-    function dropdown() {
-      console.log(btstate);
-      //下拉
-      if (btstate == false) {
-        bt.removeClass("collapsed");
-        bt.attr("aria-expanded", "true");
-        bm.attr("aria-expanded", "true")
-        bm.fadeIn(700);
-        btstate = true;
-      }
-      else {
-        bt.addClass("collapsed");
-        bt.attr("aria-expanded", "false");
-        bm.removeClass("in");
-        bm.hide();
-        bm.attr("aria-expanded", "false");
-        btstate = false;
-      }
-    }
-  </script> 
-                <!----------- 移动端导航栏👆 ----------------->
+            <div class="shareContainer">
+                <div class="share" style="height:30px;">
+                    <a class="qq" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/qqs.png" alt=""></i></a>
+                    <a class="wechat" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/wechats.png" alt=""></i></a>
+                    <a class="weibo" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/weibos.png" alt=""></i></a>
+                    <a class="qzone" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/qzones.png" alt=""></i></a>
+                    <a class="douban" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/doubans.png" alt=""></i></a>
+                    <a class="facebook" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/facebooks.png" alt=""></i></a>
+                    <a class="twitter" href=""><i><img class="shareicon"
+                                src="https://www.freewalker.xyz/media/images/twitter.png" alt=""></i></a>
                 </div>
-                <div id="main" class="col-xs-12 col-sm-12 col-md-12 col-lg-7">
-                    <!-- 移动端 -->
-                    <div class="mobilebar">
-                        <!-- 移动端欢迎页 -->
-<div class="welcome">
-    <div class="avatar-border">
-        <img src="https://www.freewalker.xyz/images/avatar.png?v=1669418985211" class="avatar">
+            </div>
+            
+        <div id="otherpost">
+            
+            <a  data-pjax class="prev-post-pc" href="https://www.freewalker.xyz/zi-yuan/"  style="color: black;">
+                <div id="ppcontainer">
+                    
+                    <img src="https://www.freewalker.xyz/post-images/zi-yuan.png" style="width: 100%;" class="opimg">
+                    
+                    <h4 class="optitle">资源</h4>
+                </div>
+            </a>
+            <div class="prev-post">
+                上一篇 <a  data-pjax href="https://www.freewalker.xyz/zi-yuan/">资源</a>
+            </div>
+            
+            
+        </div>
     </div>
-    <span class="mobiledescribtion"></span>
-</div>
-
-
-    <div id="mobilebgurl" style="display:none">https://api.zylearning.top/api/wallpaper?lx=qc</div>
-
+    </div>
+    </div>
+    <!-- 弹窗 -->
+    <div id="myModal" class="modal">
+        <img class="modal-content" id="img01">
+    </div>
+</body>
 <script>
-    var welcome = $('.welcome');
-    var bgurl = document.getElementById("mobilebgurl").innerHTML;
-    for (var i = 0; i < 3; i++)
-        bgurl = bgurl.replace("\\", "/");
-    welcome.css("background", "url('" + bgurl + "')");
-    var mobiledes = document.querySelector(".mobiledescribtion");
-    var text = "May the force be with you
-";
-    // 当前显示第几个字
-    var mobilecharIndex = 1;
-    // 每个字显示间隔默认是500毫秒
-    var mobiledelta = 500;
-
-    // 记录动画执行开始时间
-    var mobilestart = null;
-    // 是否为删除动画
-    var mobileisDeleting = false;
-
-    // 动画回调函数
-    function mobileLoadDes(time) {
-        window.requestAnimationFrame(mobileLoadDes);
-        // 初始化开始时间
-        if (!mobilestart) start = time;
-        // 获取时间间隔
-        var mobileprogress = time - mobilestart;
-        // 每隔一定的时间，打印出一个新的字符
-        if (mobileprogress > mobiledelta) {
-            // 如果是打字效果
-            if (!mobileisDeleting) {
-                // 给展示文字的span新增一个字符，使用innerHTML来替换，charIndex自增1，然后返回新的字符串子串
-                mobiledes.innerHTML = "&nbsp;" + text.slice(
-                    0,
-                    ++mobilecharIndex
-                );
-                mobiledelta = 500 - Math.random() * 400;
-            } else {
-                // 如果是删除效果，则把文字一个一个减掉
-                mobiledes.innerHTML = "&nbsp;" + text.slice(
-                    0,
-                    mobilecharIndex--
-                );
-            }
-            // 把star更新为当前时间，进行下一个周期
-            mobilestart = time;
-
-            // 如果文字已经全部打印完毕
-            if (mobilecharIndex === text.length) {
-                // 下次开始删除文字
-                mobileisDeleting = true;
-                // 删除文字的间隔为200毫秒
-                mobiledelta = 100;
-                // 额外等待1.2秒后再删除
-                mobilestart = time + 1000;
-            }
-
-            // 如果文字删除完毕
-            if (mobilecharIndex < 0) {
-                mobileisDeleting = false;
-                // 额外增加200毫秒延迟
-                mobilestart = time + 200;
-            }
-        }
-    }
-
-    window.requestAnimationFrame(mobileLoadDes);
+    //文章阅读热度
+    var pl = $("#pl").html();
+    var rootaddr = $("#rootaddr").html();
+    pl = pl.replace(rootaddr, "");
+    $("#hotnum").attr('id', pl);
 </script>
-                        <img src="" alt="" class="plbg">
-<script>
-    var bgchoice = "link";
-    if(bgchoice=='default')
-        var plbgurl = "/media/images/custom-mobilebg.jpg"
-    else  
-        var plbgurl = "https://api.zylearning.top/api/wallpaper?lx=qc"
-    $(".plbg").attr("src",plbgurl);
-    $(".plbg").fadeIn(200);
-</script>
+                    <div class="toc-container">
+                        
                     </div>
-                    <div style="display:none">
+                    <div class="tog">
+                        <div class="toggleContainer">
+                            <div class="toggle">
+                                <i class="fas fa-angle-double-up"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!---------------------------- 评论系统👇 ------------------------->
+                    <div id="comment" class="comment">
+                        <div class="commentcontainer">
+                            
+                                
+                                    
         <div id="vcomments">
         </div>
         <script>
@@ -1238,226 +1307,24 @@ menulist.eq(i).show();
             });
         </script>
 
-</div>
-                    <link rel="stylesheet" href="https://www.freewalker.xyz/media/css/font-awesome.css">
 
-
-    <div style="display: none;">
-        
-            
-                <span name="plfeature">https://www.freewalker.xyz/post-images/zi-yuan.png</span>
-                
-            <span name="pltitle">资源</span>
-            <span name="pllink">https://www.freewalker.xyz/zi-yuan/</span>
-            <span name="pldate">2022-06-09</span>
-            <span name="plstats">1 min read</span>
-            
-        
-            
-                
-                    <span name="plfeature">https://api.zylearning.top/api/wallpaper?lx=qc</span>
-                
-                
-            <span name="pltitle">渲染</span>
-            <span name="pllink">https://www.freewalker.xyz/xr/</span>
-            <span name="pldate">2018-12-12</span>
-            <span name="plstats">6 min read</span>
-            
-        
-    </div>
-
-    
-    <div id="post-container" class="eleg-allpostscontainer">
-        <div v-for="post in postinfo" class="eleg-posts">
-            <div v-if="post.elegcontainer=='eleg-postcontainer-left'">
-                    <div :class="post.elegcontainer">
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                        
-                        <img class="eleg-swordsmen-left" src="https://www.freewalker.xyz/media/images/swordsmenleft.webp" alt="">
-                        
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
+                                    <div class="clear"></div>
+                                
+                            
                         </div>
                     </div>
-                    <div class='eleg-tags'>
-                        <div v-for="(tag,i) in post.tags">
-                            <div class="posttag">
-                                <a data-pjax :href="post.taglink[i]" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-            <div v-else>
-                    <div :class="post.elegcontainer">
-                        <div class="eleg-info">
-                            <span class="eleg-title">{{post.title}}</span>
-                            <div style="margin-top:15px;">
-                                <span class="postdate eleg-date"><i class="fa fa-calendar"></i>{{post.date}}</span>
-                                <span class="poststatus postdate eleg-stats"><i class="fa fa-clock-o"></i> {{post.stats}}</span>
-                            </div>
-                            <div style="margin-top:50px">
-                                <a :href="post.link" class="eleg-btn" data-pjax>阅读全文</a>
-                            </div>
-                        </div>
-                        
-                        <img class="eleg-swordsmen" src="https://www.freewalker.xyz/media/images/swordsmen.webp" alt="">
-                        
-                        <img :src="post.feature" alt="" :class="post.imgclass">
-                    </div>
-                    <div class='eleg-tags'>
-                        <div v-for="(tag,i) in post.tags">
-                            <div class="posttag">
-                                <a data-pjax :href="post.taglink[i]" class="postlink eleg-postlink">
-                                    <i class="fa fa-tag"></i>{{tag}}
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <script>
-    var app2 = new Vue({
-      el: '#post-container',
-      mounted:function(){
-        this.getpostInfo();
-      },
-      methods:{
-         getpostInfo:function(){
-             var plflist = $("span[name='plfeature']");
-             var pltlist = $("span[name='pltitle']");
-             var plllist = $("span[name='pllink']");
-             var pldlist = $("span[name='pldate']");
-             var plslist = $("span[name='plstats']");
-             var pltaglist = $("span[name='pltag']");
-             var pltaglinklist = $("span[name='pltaglink']")
-             for(var i=0;i<this.pagesize&&i<plflist.length;i++){
-                 var d = {};
-                 var tags = []
-                 var taglink = []
-                 d["feature"] = plflist.eq(i).html();
-                 d["title"] = pltlist.eq(i).html();
-                 d["link"] = plllist.eq(i).html();
-                 d["date"] = pldlist.eq(i).html();
-                 d['stats'] = plslist.eq(i).html();
-                 for(var j=0;j<pltaglist.length;j++){
-                     if(pltaglist.eq(j).attr('alt')==d['title'])
-                        tags.push(pltaglist.eq(j).html())
-                 }
-                 d["tags"] = tags;
-                 for(var j=0;j<pltaglinklist.length;j++){
-                    if(pltaglinklist.eq(j).attr('alt')==d['title'])
-                        taglink.push(pltaglinklist.eq(j).html())
-                 }
-                 d["taglink"] = taglink
-                 if(i%2==0)
-                 {
-                     d['elegcontainer'] = 'eleg-postcontainer-left';
-                     d['imgclass'] = 'eleg-img-left'
-                 }
-                 else{
-                    d['elegcontainer'] = 'eleg-postcontainer-right';
-                    d['imgclass'] = 'eleg-img-right' 
-                 }
-                 this.postinfo.push(d);
-             }
-         }
-      },
-      data: {
-        pagesize: "10",
-        postinfo:[],
-      }
-    })
-    </script>
-
-
-                    <div>
-                        <div class="pcpagi">
-    <div class="pagi">
-        <ul>
-            
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                    <li><a id="page1">1</a></li>
-                    <li><a id="page2" class="active">2</a></li>
-                    <li><a id="page3">3</a></li>
-                    
-            <li><a style="width:100px">&nbsp;</a></li>
-            
-                </ul>
-    </div>
-</div>
-
-<div id="pagination-prev" style="display:none"> 
-</div>
-<div id="pagination-next" style="display:none"> </div>
-
-<div class="pagination-container">
-      
-    
-</div>
-
-<script>
-    var prevstr = document.getElementById("pagination-prev").innerHTML;
-    var nextstr = document.getElementById("pagination-next").innerHTML;
-    var page1 = document.getElementById("page1");
-    var page2 = document.getElementById("page2");
-    var page3 = document.getElementById("page3");
-    page1.innerHTML = '-';
-    page2.innerHTML = '1';
-    page3.innerHTML = '-';
-    if (prevstr.length > 5) {
-        if (prevstr.indexOf("page/") != -1) {
-            var prevnum = parseInt(prevstr.split("page/")[1]);
-            page1.innerHTML = prevnum;
-            page2.innerHTML = prevnum + 1;
-        } else {
-            page1.innerHTML = 1;
-            page2.innerHTML = 2;
-        }
-    }
-    if (nextstr.indexOf("page/") != -1) {
-        var nextnum = parseInt(nextstr.split("page/")[1]);
-        page3.innerHTML = nextnum;
-        page2.innerHTML = nextnum - 1;
-    }
-</script>
-                    </div>
+                    <!---------------------------- 评论系统👆 ------------------------->
                 </div>
+                <!-- main标签，pjax渲染时加载以上内容👆 -->
                 <div class="col-md-1 col-lg-2"></div>
-                
-                <!-- ----------------左侧菜单栏html 👆-------------------------------------->
-                <!------------------ 顶部菜单栏html👇--------->
-                 
-                <!------------------ 顶部菜单栏html👆--------->
+                <div id="bg">
                 </div>
             </div>
-            <div id="bg">
-            </div>
-            <!------- 背景图加载方式👇----- -->
-            <div id="bgchoice" style="display: none">link
-            </div>
+            <!-- ----------------左侧菜单栏html 👆-------------------------------------->
             
-            <div id="bgurl" style="display:none">https://api.zylearning.top/api/wallpaper?lx=qc</div>
-            
-            <!------- 背景图加载方式👆----- --> 
-        <div id="landlord">
-            <div class="message" style="opacity:0"></div>
-            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
         </div>
-    </div>
-        
+        <!-- aplayer播放器加载👇 -->
+            
             <head>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
 </head>
@@ -1520,23 +1387,71 @@ menulist.eq(i).show();
         }
     }
 </script>
-        
-    <div id="domainname" style="display:none">https://www.freewalker.xyz
-        </div>
+            
+        <!-- aplayer播放器加载👆 -->
+    </div>
+    <!-- 背景图加载方式👇 -->
+    <div id="bgchoice" style="display: none">link
+                </div>
+                
+                <div id="bgurl" style="display:none">https://api.zylearning.top/api/wallpaper?lx=qc</div>
+                
+    <!-- 背景图加载方式👆 -->
+</body>
 
-<!-------------------- live2d功能👇 --------------------------->
-    
-        <script type="text/javascript">
-            var message_Path = '/live2d/'
-            var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
-        </script>
-        <script type="text/javascript" src="https://www.freewalker.xyz/media/js/live2d.js"></script>
-        <script type="text/javascript" src="https://www.freewalker.xyz/media/live2d/js/message.js"></script>
-        <script type="text/javascript">
-            loadlive2d("live2d", "https://www.freewalker.xyz/media/live2d/assets/tororo.model.json");
-        </script>
-    
-<!-------------------- live2d功能👆 --------------------------->
+<script>
+    //初始化
+    //更换twikoo头像
+    setTimeout(replaceAvatar,1000);
+    setTimeout(replaceAvatar,2000);
+    setTimeout(replaceAvatar,8000);
+    // --------为每张图片添加懒加载（lazyload）标签-->懒加载功能 👇------------
+    lazyload();
+    //为文章内所有代码块添加代码复制功能 👇
+    codeinit();
+    // ------代码高亮显示功能-------------
+    hljs.initHighlightingOnLoad();
+    if (shareChoice)
+        shareInit();
+    if (donateChoice)
+        donateInit();
+</script>
+
+<!------------------ 加载live2d模型功能（看板娘）👇 ---------------->
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://www.freewalker.xyz/media/js/live2d.js"></script>
+<script type="text/javascript" src="https://www.freewalker.xyz/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://www.freewalker.xyz/media/live2d/assets/tororo.model.json");
+</script>
+
+<!------------------ 加载live2d模型功能（看板娘）👆 ---------------->
+
+
+<!----------------------- 返回顶部按钮功能👇 --------------------->
+<script>
+    $(function () {
+        $('.toggleContainer').click(function () {
+            $('html,body').animate({
+                scrollTop: '0px'
+            }, 800);
+        });
+        $(window).scroll(function () {
+            var st = $(window).scrollTop();
+            if (st > 30) {
+                $(".toggleContainer").fadeIn(400);
+            } else {
+                $(".toggleContainer").fadeOut(100);
+            }
+        });
+    });
+</script>
+<!----------------------- 返回顶部按钮功能👆 --------------------->
+
 
 <!------------ 加载全局背景图功能👇（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 <script>
@@ -1557,9 +1472,29 @@ menulist.eq(i).show();
 </script>
 <!------------ 加载全局背景图功能👆（开始时没有写好，这功能有点鸡肋/(ㄒoㄒ)/~~） -->
 
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
 
-        <script src="https://www.freewalker.xyz/media/js/index.js"></script>
-        
-</body>
-</html>
+
+
+<script src="https://www.freewalker.xyz/media/js/index.js"></script>
+
+
+<script>
+    //加载后的事件同步（阅读量、移动端评论等
+    window.onload = function () {
+    //代码块高亮渲染
+    document.querySelectorAll('pre code').forEach((block) => {
+            hljs.highlightBlock(block);
+    });
+        getHotnum();
+        var sharepc = $(".share").eq(0).html();
+        $(".share").eq(1).html(sharepc);   //插件只会寻找一个分享标签渲染，所以需要手动添加到移动端
+        aplayerbtnInit();
+        $(".hljs").css({
+            "padding": "20px"
+        })
+    }
+</script>
+
+<!-- <script src="https://www.freewalker.xyz/media/js/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@3.13.0/dist/av-min.js"></script> -->
+<!-- <script src="https://cdn.jsdelivr.net/npm/leancloud-storage@4.6.1/dist/av-live-query-min.js"></script> -->
